@@ -45,36 +45,42 @@ This project demonstrates the deployment of a T-Pot honeypot on an AWS EC2 Ubunt
 ```bash
 ssh -i honey.pem ubuntu@<your-public-ip>
 
-5. Clone T-Pot Repository
+### 5. Clone T-Pot Repository
+```bash
 git clone https://github.com/telekom-security/tpotce
 cd tpotce
+```
 
-6. Install T-Pot
+---
+
+### 6. Install T-Pot
+```bash
 sudo ./install.sh
-Followed installation prompts
-Selected standard installation setup
-Rebooted system after installation
+```
+- Follow the installation prompts  
+- Select the standard installation setup  
+- Reboot the system after installation  
 
-7. Verify Installation
-Check T-Pot service:
+---
+
+### 7. Verify Installation
+```bash
 systemctl status tpot
+```
 
-⚠️ Challenges Faced
-Permission denied errors during setup
-GitHub cloning issues due to network connectivity
-SSH configuration challenges
-Port access errors (400 Bad Request)
-Security group misconfiguration initially blocking access
+---
 
-✅ Conclusion
+## ⚠️ Challenges Faced
+- Encountered permission denied errors during setup  
+- Faced GitHub cloning issues due to network connectivity  
+- Initial SSH configuration problems  
+- Received "400 Bad Request" errors when accessing the web interface  
+- Misconfigured security groups initially blocked required ports  
 
-This project successfully demonstrates how a cloud-based honeypot can be deployed to monitor and analyze real-world cyber threats. Using T-Pot and the Elastic Stack, it is possible to gain valuable insights into attacker behavior and network vulnerabilities.
+---
 
-
-🚀 Future Improvements
-Automate deployment using scripts
-Add alerting system for real-time attack notifications
-Integrate threat intelligence feeds
+## ✅ Conclusion
+This project demonstrates the successful deployment of a cloud-based honeypot using T-Pot on AWS EC2. The system captures and visualizes real-world attack data through the Elastic Stack, providing insight into attacker behavior and potential vulnerabilities. It highlights the importance of proper network configuration, security group management, and system setup in cloud-based cybersecurity environments.
 Deploy multiple honeypots across regions
 
 
