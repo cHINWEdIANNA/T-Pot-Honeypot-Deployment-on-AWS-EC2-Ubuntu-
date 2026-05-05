@@ -1,7 +1,18 @@
 # T-Pot Honeypot Deployment on AWS EC2
 
-## 📌 Overview
-This project demonstrates the deployment of a T-Pot honeypot on an AWS EC2 Ubuntu instance. The system is designed to capture, monitor, and analyze real-world cyber attacks using multiple honeypot services and the Elastic Stack (Kibana).
+## 🧠 Architecture Overview
+
+The system is composed of multiple layers:
+
+- **AWS EC2 (Ubuntu 24.04)** → Hosting environment
+- **Docker Containers** → Runs multiple honeypots (Cowrie, Dionaea, etc.)
+- **T-Pot Platform** → Manages honeypot deployment and logging
+- **Elastic Stack (ELK)**:
+  - Elasticsearch → Stores attack data
+  - Logstash → Processes logs
+  - Kibana → Visualizes attacks (dashboards + attack map)
+
+Attackers interact with exposed ports, and all activity is captured, logged, and visualized in real-time.
 
 ---
 
@@ -67,7 +78,23 @@ sudo ./install.sh
 ```bash
 systemctl status tpot
 ```
+---
 
+## 🌍 Real-World Attack Insights
+
+- Captured live attack attempts from external IP addresses
+- Observed HTTP-based attacks targeting exposed services
+- Identified attacker locations and IP reputation
+- Demonstrated how quickly publicly exposed systems receive traffic
+
+---
+## 🎯 Key Learnings
+
+- Learned how to deploy and manage cloud infrastructure on AWS EC2
+- Gained experience configuring security groups and network access
+- Understood how honeypots capture attacker behavior
+- Worked with Docker-based environments and multi-container systems
+- Used Kibana dashboards to analyze real-time cyber attack data
 ---
 
 ## ⚠️ Challenges Faced
